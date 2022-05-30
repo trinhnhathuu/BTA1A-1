@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  <title>Document</title>
+
+</head>
+<style>
+  * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  display: flex;
+  font-family: "Helvetica Neue";
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Courier";
+
+}
+.mr{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.commentss {
+  min-width: 500px;
+  height: 250px;
+  border: 1px solid black;
+  margin:10px;
+  
+}
+.title {
+  margin-top: 10px;
+  color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: row;
+}
+.t_comment {
+  display: flex;
+  flex-direction: column;
+  flex: 4;
+}
+.t_star {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+.comment {
+  display: flex;
+  flex-direction: row;
+  
+}
+.comment_img {
+  display: flex;
+  flex-direction: column;
+  
+}
+#inpt {
+  display: flex;
+  flex-direction: column;
+  flex: 4;
+}
+.cmt{
+  display: flex;
+  flex-direction: column;
+  
+  background-color:lightblue;
+  border: 1px solid black
+}
+.user{
+  display: flex;
+  flex-direction: column;
+ 
+  background-color:bisque;
+}
+.name{
+  font-weight:bold;
+}
+</style>
+<body>
+  <div class="commentss">
+    <div class="title mr">
+      <h1 class="t_comment">4 comments</h1>
+      <h1 class="t_star"><i class="bi bi-star"></i>79</h1>
+    </div>
+    <div class="comment mr">
+      <div class="comment_img">
+        <img
+          src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+          alt="" width="80">
+      </div>
+      <input type="text" name="comment" id="inpt" placeholder="hãy comments vào đây "></input>
+    </div>
+    <div class="cmt">
+     
+    </div>
+  </div>
+  
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+  <script>
+    $(document).ready(function () {
+      $.ajax({
+        url: "http://localhost:3000/api/user",
+        success: function (data, status, xhr) {
+          console.log("success: ", data, xhr);
+          $('.cmt').html(data);
+        },
+        error: function (jqXhr, textStatus, errorMessage) {
+          console.log("errors: ", errorMessage);
+        }
+      })
+    });
+  </script>
+
+</body>
+
+</html>

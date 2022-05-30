@@ -1,0 +1,19 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #d6a7a7;
+  display: flex;
+  position: relative;
+  background-image: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 100%);
+}
+
+a {
+  color: #00B7FF;
+}
+.search_sex{
+  border: 1px solid #fff;
+}
+.table{
+  flex:2; 
+  border: 1px solid #fff;
+}
